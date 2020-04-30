@@ -19,4 +19,4 @@ jobs:
           event-name: "IPFS Weekly Call"
           lookout-days: 30
       - name: Test Response
-        run: echo 'Recieved ${{ steps.icalevent.outputs.start }}'
+        run: echo 'Recieved ${{ steps.icalevent.outputs.summary }}'
