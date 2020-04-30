@@ -26,10 +26,10 @@ async function run(production = true) {
     const event = await icaltools.getNextEvent(iCalAddress, eventName, lookoutDays);
     
     if(production) {
-      core.setOutput('summary', event.summary.replace(/[^\x00-\x7F]/g, ""));
-      core.setOutput('description', event.description.replace(/[^\x00-\x7F]/g, ""));
-      core.setOutput('start', event.start);
-      core.setOutput('end', event.end);
+      core.setOutput('summary', event.summary);
+      core.setOutput('description', event.description);
+      core.setOutput('start', event.start.toString());
+      core.setOutput('end', event.end.toString());
     } else {
       console.log(`
         ${event.summary}
