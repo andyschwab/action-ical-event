@@ -26,10 +26,10 @@ async function run(production = true) {
     const event = await icaltools.getNextEvent(iCalAddress, eventName, lookoutDays);
     
     if(production) {
-      core.setOutput("summary", event.summary);
-      core.setOutput("description", event.description);
-      core.setOutput("start", event.start);
-      core.setOutput("end", event.end);   
+      core.setOutput('summary', event.summary);
+      core.setOutput('description', event.description);
+      core.setOutput('start', event.start);
+      core.setOutput('end', event.end);   
     } else {
       console.log(`
         ${event.summary}
@@ -45,9 +45,9 @@ async function run(production = true) {
 
   } catch (error) {
     if(production) {
-      core.setFailed(error.message);
+      core.setFailed(error);
     } else {
-      console.log(error.message);
+      console.log(error);
     }
   }
 }
