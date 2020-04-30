@@ -6,7 +6,7 @@ async function getNextEvent(calendarUrl, eventName, lookoutDays) {
     const webEvents = await ical.async.fromURL(calendarUrl);
     let nextEvent;
     for(let i in webEvents){
-      if(webEvents[i].summary.includes(eventName)) {
+      if(webEvents[i].summary && webEvents[i].summary.includes(eventName)) {
         nextEvent = getNextDate(webEvents[i], lookoutDays);
         if(nextEvent.summary){
           console.log(nextEvent);

@@ -47,4 +47,4 @@ async function run(production = true) {
   }
 }
 
-run(false)
+run()
