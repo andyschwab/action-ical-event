@@ -1,4 +1,4 @@
-name: 'get_next_event'
+name: 'get-next-event'
 description: 'return the summary, description, start, and end datetimes for the next instance of a public iCal event'
 inputs:
   ical-address: 
