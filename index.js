@@ -30,9 +30,14 @@ async function run(production = true) {
       core.setOutput("description", event.description);
       core.setOutput("start", event.start);
       core.setOutput("end", event.end);   
+    } else {
+      console.log(`
+        ${event.summary}
+        ${event.description}
+        ${event.start}
+        ${event.end}
+      `);
     }
-
-    console.log(event);
 
     // Get the JSON webhook payload for the event that triggered the workflow
     // const payload = JSON.stringify(github.context.payload, undefined, 2)
@@ -47,4 +52,4 @@ async function run(production = true) {
   }
 }
 
-run()
+run(false)

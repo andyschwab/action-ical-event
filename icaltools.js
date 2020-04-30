@@ -9,7 +9,6 @@ async function getNextEvent(calendarUrl, eventName, lookoutDays) {
       if(webEvents[i].summary && webEvents[i].summary.includes(eventName)) {
         nextEvent = getNextDate(webEvents[i], lookoutDays);
         if(nextEvent.summary){
-          console.log(nextEvent);
           return nextEvent;
         }
       }
