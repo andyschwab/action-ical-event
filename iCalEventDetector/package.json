@@ -1,7 +1,7 @@
 {
-  "name": "iCalEventDetector",
+  "name": "ical-event-detector",
   "version": "1.0.0",
-  "description": "This action prints \"Hello World\" or \"Hello\" + the name of a person to greet to the log.",
+  "description": "Action to pull the next event from an iCal calendar",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
