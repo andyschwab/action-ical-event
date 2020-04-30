@@ -23,7 +23,7 @@ async function run(production = true) {
         Days to look ahead = ${lookoutDays}
       `);
 
-    const event = icaltools.getNextEvent(iCalAddress, eventName, lookoutDays);
+    const event = await icaltools.getNextEvent(iCalAddress, eventName, lookoutDays);
     
     if(production) {
       core.setOutput("summary", event.summary);
