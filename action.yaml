@@ -13,9 +13,13 @@ inputs:
     default: '30'
 outputs:
   summary:
+    description: 'event title or summary'
   description: 
+    description: 'event description'
   start:
+    description: 'event start datetime'
   end:
+    description: 'event end datetime'
 runs:
   using: 'node12'
   main: 'index.js'
