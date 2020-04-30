@@ -45,7 +45,7 @@ async function run(production = true) {
 
   } catch (error) {
     if(production) {
-      core.setFailed(error);
+      core.setFailed(error.toString());
     } else {
       console.log(error);
     }
