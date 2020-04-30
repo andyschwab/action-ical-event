@@ -12,7 +12,7 @@ async function run(production = true) {
       lookoutDays = core.getInput('lookout-days');
     } else {
       iCalAddress = "https://calendar.google.com/calendar/ical/ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com/public/basic.ics"
-      eventName = "IPFS Weekly Call 🙌🏽 📞";
+      eventName = "IPFS Weekly Call";
       lookoutDays = 30;
     }
 
@@ -47,4 +47,4 @@ async function run(production = true) {
   }
 }
 
-run()
+run(false)
