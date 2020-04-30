@@ -1,13 +1,25 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'get_next_event'
+description: 'return the summary, description, start, and end datetimes for the next instance of a public iCal event'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  ical-address: 
+    description: 'URL to a public iCal destination'
     required: true
-    default: 'Meh'
+  event-name: 
+    description: 'summary (title) of the event'
+    required: true
+  lookout-days: 
+    description: 'number of days to look forward'
+    required: true
+    default: '30'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  summary:
+    description: 'title or summary of the event'
+  description: 
+    description: 'detailed description of the event'
+  start:
+    description: 'datetime of event start'
+  end:
+    description: 'datetime of event end'
 runs:
   using: 'node12'
   main: 'index.js'

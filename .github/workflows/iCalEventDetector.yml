@@ -5,18 +5,20 @@ name: iCalEventDetector
 on: [push]
 
 jobs:
-  hello_world_job:
+  get_next_event:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Get Next iCal Event
     steps:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
+      - name: Run iCalEventDetector
         uses: ./iCalEventDetector/
-        id: hello
+        id: icalevent
         with:
-          who-to-greet: 'Joe'
+          ical-address: 'https://calendar.google.com/calendar/ical/ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com/public/basic.ics'
+          event-name: 'IPFS Weekly Call 🙌🏽 📞'
+          lookout-days: '30';
       # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Test response
+        run: echo "Recieved ${{ steps.icalevent.outputs.summary }}"
