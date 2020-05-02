@@ -29,6 +29,7 @@ async function getNextEvent(calendarUrl, eventName, lookoutDays) {
 }
 
 // returns the next instance of an iCal @event within @lookoutDays of now
+// derived from: https://github.com/peterbraden/ical.js/blob/master/example_rrule.js
 function getNextDate(event, lookoutDays) {
   if(event.type !== 'VEVENT') {
     return null;
@@ -79,7 +80,6 @@ function getNextDate(event, lookoutDays) {
 
     // Loop through the set of date entries to see which recurrences should be printed.
     for(var i in dates) {
-
       var date = dates[i];
       var curEvent = event;
       var curDuration = duration;

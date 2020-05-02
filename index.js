@@ -23,19 +23,6 @@ async function run() {
       console.log(`  ${key}: ${event[key]}`);
     }      
 
-/*     core.setOutput('summary', event.summary);
-    core.setOutput('description', event.description);
-    core.setOutput('start', event.start.toString());
-    core.setOutput('end', event.end.toString());
-    
-    console.log(`
-      Returned...
-        Summary: ${event.summary}
-        Description: ${event.description}
-        Start Date: ${event.start.toString()}
-        End Date: ${event.end.toString()}
-    `); */
-
     // Get the JSON webhook payload for the event that triggered the workflow
     // const payload = JSON.stringify(github.context.payload, undefined, 2)
     // console.log(`The event payload: ${payload}`);
