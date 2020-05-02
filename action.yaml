@@ -10,7 +10,7 @@ inputs:
   lookout-days: 
     description: 'number of days to look forward'
     required: true
-    default: '30'
+    default: '365'
 outputs:
   summary:
     description: 'event title or summary'

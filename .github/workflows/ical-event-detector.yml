@@ -17,6 +17,6 @@ jobs:
         with:
           ical-address: "https://calendar.google.com/calendar/ical/ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com/public/basic.ics"
           event-name: "IPFS Weekly Call"
-          lookout-days: 30
+          lookout-days: 365
       - name: Test Response
         run: echo 'Recieved ${{ steps.icalevent.outputs.summary }}'
