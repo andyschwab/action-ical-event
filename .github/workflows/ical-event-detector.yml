@@ -7,7 +7,7 @@ on: [push]
 jobs:
   get_next_event:
     runs-on: ubuntu-latest
-    name: Get Next iCal Event
+    name: iCal Event Detector
     steps:
       - name: Checkout
         uses: actions/checkout@v2

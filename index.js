@@ -8,10 +8,10 @@ async function run() {
     let lookoutDays = core.getInput('lookout-days');
 
     console.log(`
-        Processing...
-          iCal URL = ${iCalAddress}
-          Event Name = ${eventSummary}
-          Days to look ahead = ${lookoutDays}
+Processing...
+  iCal URL = ${iCalAddress}
+  Event Name = ${eventSummary}
+  Days to look ahead = ${lookoutDays}
       `);
 
     const event = await icaltools.getNextEvent(iCalAddress, eventSummary, lookoutDays);
