@@ -9,14 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     name: iCal Event Detector
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run
-        uses: ./
+      - name: run ical from public repo
+        uses: andyschwab/action-ical-event
         id: icalevent
         with:
           ical-address: "https://calendar.google.com/calendar/ical/ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com/public/basic.ics"
           event-name: "IPFS Weekly Call"
           lookout-days: 365
-      - name: Test Response
+      - name: test ical response
         run: echo 'Recieved ${{ steps.icalevent.outputs.summary }}'
