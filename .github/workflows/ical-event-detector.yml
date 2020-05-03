@@ -17,7 +17,8 @@ jobs:
           event-summary: "IPFS Weekly Call"
           lookout-days: 7
       - name: test ical response
-        run: echo 'Summary - ${{ steps.icalevent.outputs.summary }}'
-        run: echo 'Description - ${{ steps.icalevent.outputs.description }}'
-        run: echo 'Start - ${{ steps.icalevent.outputs.start }}'
-        run: echo 'End - ${{ steps.icalevent.outputs.end }}'
+        run: |
+          echo 'Summary - ${{ steps.icalevent.outputs.summary }}'
+          echo 'Description - ${{ steps.icalevent.outputs.description }}'
+          echo 'Start - ${{ steps.icalevent.outputs.start }}'
+          echo 'End - ${{ steps.icalevent.outputs.end }}'
