@@ -51,5 +51,7 @@ Event end datetime in format: 2013-03-01T00:00:00+01:00
 uses: andyschwab/action-ical-event
 id: my-event
 with:
-  event-name: 'Happy Birthday to Me'  
+  ical-address: 'https://mysite.com/mycal.ics'
+  event-summary: 'Happy Birthday to Me'
+  lookahead-days: 45
 ```
