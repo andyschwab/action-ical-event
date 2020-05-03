@@ -3,9 +3,11 @@
 This action references a public iCal resource and searches for the next instance, from now, of a target event. Returns the following as output to be used in additional action steps:
 
 * `summary` - the summary (or title) of the event
-* `decription` - the full event description
+* `description` - the full event description
 * `start` - in format: 2013-03-01T00:00:00+01:00
 * `end` - in format: 2013-03-01T00:00:00+01:00
+
+Throws an error if no matching event is found
 
 ## Inputs
 
