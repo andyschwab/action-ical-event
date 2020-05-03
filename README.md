@@ -48,7 +48,7 @@ Event end datetime in format: 2013-03-01T00:00:00+01:00
 ## Example usage
 
 ```yaml
-uses: andyschwab/action-ical-event-detector
+uses: andyschwab/action-ical-event
 id: my-event
 with:
   event-name: 'Happy Birthday to Me'  
