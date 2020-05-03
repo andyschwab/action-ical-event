@@ -5,16 +5,16 @@ const moment = require('moment');
   returns an iCal event JSON object or null if none found
 
   @calendarUrl - full url to a public iCal resource
-  @eventName - the summary or title of the event
+  @eventSummary - the summary or title of the event
   @lookoutDays - number of days from now to look ahead for the next instance
 */
-async function getNextEvent(calendarUrl, eventName, lookoutDays) {
+async function getNextEvent(calendarUrl, eventSummary, lookoutDays) {
 
   const webEvents = await ical.async.fromURL(calendarUrl);
   let nextEvent;
 
   for(let i in webEvents){
-    if(webEvents[i].summary && webEvents[i].summary.includes(eventName)) {
+    if(webEvents[i].summary && webEvents[i].summary.includes(eventSummary)) {
       nextEvent = getNextDate(webEvents[i], lookoutDays);
 
       if(nextEvent.summary) break;
@@ -24,7 +24,7 @@ async function getNextEvent(calendarUrl, eventName, lookoutDays) {
   if(nextEvent) {
     return nextEvent;
   } else {
-    throw `No event named ${eventName} found within ${lookoutDays}`;
+    throw `No event named ${eventSummary} found within ${lookoutDays}`;
   }
 }
 
@@ -115,8 +115,8 @@ function getNextDate(event, lookoutDays) {
   return summary == null ? {} : {
     'summary': summary,
     'description': description,
-    'start': startDate.toDate(),
-    'end': endDate.toDate(),
+    'start': startDate.format(),
+    'end': endDate.format(),
   };
 }
 

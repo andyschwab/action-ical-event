@@ -4,7 +4,7 @@ inputs:
   ical-address: 
     description: 'URL to a public iCal destination'
     required: true
-  event-name: 
+  event-summary: 
     description: 'summary (title) of the event'
     required: true
   lookout-days: 
@@ -13,7 +13,7 @@ inputs:
     default: '365'
 outputs:
   summary:
-    description: 'event title or summary'
+    description: 'event summary (the title)'
   description: 
     description: 'event description'
   start:

@@ -4,22 +4,22 @@ const icaltools = require('./icaltools');
 async function run() {
   try {
     let iCalAddress = core.getInput('ical-address');
-    let eventName = core.getInput('event-name');
+    let eventSummary = core.getInput('event-summary');
     let lookoutDays = core.getInput('lookout-days');
 
     console.log(`
         Processing...
           iCal URL = ${iCalAddress}
-          Event Name = ${eventName}
+          Event Name = ${eventSummary}
           Days to look ahead = ${lookoutDays}
       `);
 
-    const event = await icaltools.getNextEvent(iCalAddress, eventName, lookoutDays);
+    const event = await icaltools.getNextEvent(iCalAddress, eventSummary, lookoutDays);
 
     console.log("Returned... ");
 
     for(let key in event) {
-      core.setOutput(key, event[key].toString())
+      core.setOutput(key, event[key])
       console.log(`  ${key}: ${event[key]}`);
     }      
 
