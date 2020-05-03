@@ -48,7 +48,7 @@ Event end datetime in format: 2013-03-01T00:00:00+01:00
 ## Example usage
 
 ```yaml
-uses: andyschwab/action-ical-event
+uses: andyschwab/action-ical-event@v1
 id: my-event
 with:
   ical-address: 'https://mysite.com/mycal.ics'
